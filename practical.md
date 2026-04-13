@@ -108,52 +108,56 @@ Slip no 8 :- q1
  
 </body> 
 </html> 
+## PHP Program for Password Validation
+
+```php
+<?php
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Validation
+    $hasLetter = preg_match('/[a-zA-Z]/', $password);
+    $hasNumber = preg_match('/[0-9]/', $password);
+    $hasSpecial = preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password);
+    $isLongEnough = strlen($password) > 8;
+
+    if ($hasLetter && $hasNumber && $hasSpecial && $isLongEnough) {
+        $message = "<p style='color:green;'>You entered a strong password</p>";
+    } else {
+        $message = "<p style='color:red;'>Enter complex password</p>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<form method="POST">
+    Username: <input type="text" name="username" required><br><br>
+    
+    Password: <input type="password" name="password" required><br><br>
+    
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Display message -->
+<?php echo $message; ?>
+
+</body>
+</html>
+```
   
-Q2-> 
-<?php 
-$message = ""; 
- 
-if ($_SERVER["REQUEST_METHOD"] == "POST") { 
- 
-    $username = $_POST['username']; 
-    $password = $_POST['password']; 
- 
-    // Validation 
-    $hasLetter = preg_match('/[a-zA-Z]/', $password); 
-    $hasNumber = preg_match('/[0-9]/', $password); 
-    $hasSpecial = preg_match('/[!@#$%^&*(),.?":{}|<>]/', $password); 
-    $isLongEnough = strlen($password) > 8; 
- 
-    if ($hasLetter && $hasNumber && $hasSpecial && $isLongEnough) { 
-        $message = "<p style='color:green;'>You entered a strong password</p>"; 
-    } else { 
-        $message = "<p style='color:red;'>Enter complex password</p>"; 
-    } 
-} 
-?> 
- 
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <title>Password Validation</title> 
-</head> 
-<body> 
- 
-<h2>Login</h2> 
- 
-<form method="POST"> 
-    Username: <input type="text" name="username" required><br><br> 
-     
-    Password: <input type="password" name="password" required><br><br> 
-     
-    <button type="submit">Submit</button> 
-</form> 
- 
-<!-- Display message --> 
-<?php echo $message; ?> 
- 
-</body> 
-</html> 
+
  
 Slip no 5:- q1 
  
@@ -1514,184 +1518,243 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body> 
 </html> 
  
-Slip no 23 q1→ 
-<!DOCTYPE html> 
-<html> 
-<head> 
- <title>Employee Profile</title> 
- <style>  body{  font-family: Arial, sans-serif; 
- } 
- .container{  width:80%;  margin:auto;  display:flex;  border:1px solid black; 
- } 
-.menu{ 
-width:25%; background:#f2f2f2; padding:20px; 
-} 
-.content{ width:75%; 
- padding:20px; 
- }  a{  display:block;  margin:10px 0;  font-weight:bold;  text-decoration:none;  color:blue;  cursor:pointer; 
- } 
- img{  width:150px;  height:150px;  border:1px solid black; 
- } 
- table{  border-collapse:collapse;  margin-top:20px; 
- }  td{ 
- padding:8px; 
- 
- } 
- .hidden{  display:none; 
- } 
- </style>  <script>  function showHR(){  document.getElementById("hrdetails").style.display="block"; 
- } 
- </script> 
-</head> 
-<body> 
-<h2 align="center">Employee Profile Page</h2> 
-<div class="container"> 
-<!-- Column 1 --> 
-<div class="menu"> 
-<h3>Menu</h3> 
-<a href="#">Home</a> 
-<a href="#">About Us</a> 
-<a onclick="showHR()">Contact HR</a> 
-</div> 
-<!-- Column 2 --> 
- <div class="content"> 
- 
- <h3>Employee Details</h3> 
- <p><b>Employee ID:</b> EMP101</p> 
- <p><b>Name:</b> Rahul Sharma</p> 
- <p><b>Designation:</b> Software Developer</p> 
- <p><b>Department:</b> IT</p> 
- <p><b>Email:</b> rahul@gmail.com</p> 
- <p><b>Photo:</b></p> 
- <img src="employee.jpg" alt="Employee Photo"> 
- <!-- HR Details --> 
- <div id="hrdetails" class="hidden"> 
- <h3>HR Contact Details</h3> 
- <p><b>Department:</b> Human Resource</p> 
- <p><b>Email:</b> hr@company.com</p> 
- <p><b>Phone:</b> 9876543210</p> 
- </div> 
- <!-- New Employee Form --> 
- <h3>Add New Employee</h3> 
- <form> 
- <table border="1"> 
- <tr> 
- <td>Name</td> 
- <td><input type="text"></td> 
- </tr> 
- 
- <tr> 
- <td>Employee ID</td> 
- <td><input type="text"></td> 
- </tr> 
- <tr> 
- <td>Designation</td> 
- <td><input type="text"></td> 
- </tr> 
- <tr> 
- <td>Department</td> 
-<td><input type="text"></td> 
-</tr> 
-<tr> 
-<td>Email</td> 
-<td><input type="email"></td> 
-</tr> 
-<tr> 
-<td>Phone Number</td> 
- <td><input type="tel"></td> 
- </tr> 
- <tr> 
- <td colspan="2" align="center"> 
- <input type="submit" value="Submit"> 
- 
- <input type="reset" value="Reset"> 
- </td> 
- </tr> 
- </table> 
- </form> 
- </div> 
-</div> 
-</body> 
-</html> 
- 
-Q2→ 
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Feedback Form</title> 
- 
-<style> body{ 
-    font-family: Arial;     background:#f2f2f2; 
-} 
- 
-form{     width:300px;     margin:auto;     padding:15px;     background:white;     border:1px solid black; 
-} 
- 
-input, textarea, select{ 
-    width:100%;     padding:5px; 
-} 
- 
-#output{     width:300px;     margin:auto;     margin-top:20px;     padding:10px;     border:1px solid black;     background:white; 
-} 
-</style> 
- 
-</head> 
- 
-<body> 
- 
-<h2 align="center">Feedback Form</h2> 
- 
-<form onsubmit="return showFeedback()"> 
- 
-Name:<br> 
-<input type="text" id="name" required><br><br> 
- 
-Email:<br> 
-<input type="email" id="email" required><br><br> 
- 
-Feedback:<br> 
-<textarea id="message" required></textarea><br><br> 
- 
-Rating:<br> 
-<select id="rating"> 
-<option value="1">1 Star</option> 
-<option value="2">2 Stars</option> 
-<option value="3">3 Stars</option> 
-<option value="4">4 Stars</option> 
-<option value="5">5 Stars</option> 
-</select><br><br> 
- 
-<input type="submit" value="Submit"> 
- 
-</form> 
- 
-<div id="output" style="display:none;"> 
-<h3>Submitted Feedback</h3> 
- 
-<p><b>Name:</b> <span id="outName"></span></p> 
-<p><b>Email:</b> <span id="outEmail"></span></p> 
-<p><b>Feedback:</b> <span id="outMessage"></span></p> 
-<p><b>Rating:</b> <span id="outStars"></span></p> 
- 
-</div> 
- 
-<script> 
-function showFeedback() { 
- 
-var name = document.getElementById("name").value; var email = document.getElementById("email").value; var message = document.getElementById("message").value; var rating = document.getElementById("rating").value; 
- 
-var stars = ""; for(var i=0; i<rating; i++){     stars += "*"; 
-} 
- 
-document.getElementById("outName").innerHTML = name; document.getElementById("outEmail").innerHTML = email; document.getElementById("outMessage").innerHTML = message; document.getElementById("outStars").innerHTML = stars; 
- 
-document.getElementById("output").style.display = "block"; 
- 
-return false; 
-} 
-</script> 
- 
-</body> 
-</html> 
- 
+
+ slip23 
+ q1->
+ ## Employee Profile Webpage (HTML, CSS, JavaScript)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Employee Profile</title>
+ <style>
+ body{
+ font-family: Arial, sans-serif;
+ }
+ .container{
+ width:80%;
+ margin:auto;
+ display:flex;
+ border:1px solid black;
+ }
+ .menu{
+ width:25%;
+ background:#f2f2f2;
+ padding:20px;
+ }
+
+ .content{
+ width:75%;
+ padding:20px;
+ }
+ a{
+ display:block;
+ margin:10px 0;
+ font-weight:bold;
+ text-decoration:none;
+ color:blue;
+ cursor:pointer;
+ }
+ img{
+ width:150px;
+ height:150px;
+ border:1px solid black;
+ }
+ table{
+ border-collapse:collapse;
+ margin-top:20px;
+ }
+ td{
+ padding:8px;
+
+ }
+ .hidden{
+ display:none;
+ }
+ </style>
+ <script>
+ function showHR(){
+ document.getElementById("hrdetails").style.display="block";
+ }
+ </script>
+</head>
+<body>
+<h2 align="center">Employee Profile Page</h2>
+<div class="container">
+ <!-- Column 1 -->
+ <div class="menu">
+ <h3>Menu</h3>
+ <a href="#">Home</a>
+ <a href="#">About Us</a>
+ <a onclick="showHR()">Contact HR</a>
+ </div>
+ <!-- Column 2 -->
+ <div class="content">
+
+ <h3>Employee Details</h3>
+ <p><b>Employee ID:</b> EMP101</p>
+ <p><b>Name:</b> Rahul Sharma</p>
+ <p><b>Designation:</b> Software Developer</p>
+ <p><b>Department:</b> IT</p>
+ <p><b>Email:</b> rahul@gmail.com</p>
+ <p><b>Photo:</b></p>
+ <img src="employee.jpg" alt="Employee Photo">
+
+ <!-- HR Details -->
+ <div id="hrdetails" class="hidden">
+ <h3>HR Contact Details</h3>
+ <p><b>Department:</b> Human Resource</p>
+ <p><b>Email:</b> hr@company.com</p>
+ <p><b>Phone:</b> 9876543210</p>
+ </div>
+
+ <!-- New Employee Form -->
+ <h3>Add New Employee</h3>
+ <form>
+ <table border="1">
+ <tr>
+ <td>Name</td>
+ <td><input type="text"></td>
+ </tr>
+
+ <tr>
+ <td>Employee ID</td>
+ <td><input type="text"></td>
+ </tr>
+ <tr>
+ <td>Designation</td>
+ <td><input type="text"></td>
+ </tr>
+ <tr>
+ <td>Department</td>
+ <td><input type="text"></td>
+ </tr>
+ <tr>
+ <td>Email</td>
+ <td><input type="email"></td>
+ </tr>
+ <tr>
+ <td>Phone Number</td>
+ <td><input type="tel"></td>
+ </tr>
+ <tr>
+ <td colspan="2" align="center">
+ <input type="submit" value="Submit">
+ <input type="reset" value="Reset">
+ </td>
+ </tr>
+ </table>
+ </form>
+
+ </div>
+</div>
+</body>
+</html>
+```
+q2--->
+## Feedback Form (HTML, CSS, JavaScript)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Form</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f2f2f2;
+}
+
+form{
+    width:300px;
+    margin:auto;
+    padding:15px;
+    background:white;
+    border:1px solid black;
+}
+
+input, textarea, select{
+    width:100%;
+    padding:5px;
+}
+
+#output{
+    width:300px;
+    margin:auto;
+    margin-top:20px;
+    padding:10px;
+    border:1px solid black;
+    background:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2 align="center">Feedback Form</h2>
+
+<form onsubmit="return showFeedback()">
+
+Name:<br>
+<input type="text" id="name" required><br><br>
+
+Email:<br>
+<input type="email" id="email" required><br><br>
+
+Feedback:<br>
+<textarea id="message" required></textarea><br><br>
+
+Rating:<br>
+<select id="rating">
+<option value="1">1 Star</option>
+<option value="2">2 Stars</option>
+<option value="3">3 Stars</option>
+<option value="4">4 Stars</option>
+<option value="5">5 Stars</option>
+</select><br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+<div id="output" style="display:none;">
+<h3>Submitted Feedback</h3>
+
+<p><b>Name:</b> <span id="outName"></span></p>
+<p><b>Email:</b> <span id="outEmail"></span></p>
+<p><b>Feedback:</b> <span id="outMessage"></span></p>
+<p><b>Rating:</b> <span id="outStars"></span></p>
+
+</div>
+
+<script>
+function showFeedback() {
+
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var message = document.getElementById("message").value;
+var rating = document.getElementById("rating").value;
+
+var stars = "";
+for(var i=0; i<rating; i++){
+    stars += "*";
+}
+
+document.getElementById("outName").innerHTML = name;
+document.getElementById("outEmail").innerHTML = email;
+document.getElementById("outMessage").innerHTML = message;
+document.getElementById("outStars").innerHTML = stars;
+
+document.getElementById("output").style.display = "block";
+
+return false;
+}
+</script>
+
+</body>
+</html>
+```
  
