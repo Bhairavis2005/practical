@@ -1,113 +1,163 @@
  
  
 Slip no :- 1 q1  
-<!DOCTYPE html> 
-<html> 
-<head> 
- <title>Student Profile</title>  <style>  body {  font-family: Arial, sans-serif; 
- } 
- .container {  display: flex;  width: 80%;  margin: auto;  border: 1px solid black; 
- } 
- 
- .column1 {  width: 25%;  background-color: #f2f2f2;  padding: 20px; 
- } 
- 
- .column2 {  width: 75%;  padding: 20px; 
- } 
-  a {  display: block;  margin: 10px 0;  text-decoration: none;  color: blue;  font-weight: bold; 
- } 
- 
- img {  width: 150px;  height: 150px;  border: 1px solid black; 
- } 
- 
- </style> 
-</head> 	 
-<body> 
-<h2 align="center">Student Profile Page</h2> 
-<div class="container"> 
- <!-- Column 1 --> 
- <div class="column1"> 
- <h3>Menu</h3> 
- 
- <a href="#">Home</a> 
- <a href="#">Contact Us</a> 
- <a href="#">About Us</a> 
- </div 
- 
- <!-- Column 2 --> 
- <div class="column2"> 
- <h3>Student Details</h3> 
- <p><b>Roll Number:</b> 101</p> 
- <p><b>Name:</b> Nikita</p> 
- <p><b>Contact:</b> 9876543210</p> 
- <p><b>Class:</b> TYBSc IT</p> 
- <p><b>Area of Interest:</b> Web Development</p> 
- <p><b>Photo:</b></p> 
- <img src="student.jpg" alt="Student Photo"> 
- </div> 
-</div> 
-</body> 
-</html> 
- 
-Q2→ 
- 
- 
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Login</title> <style> body{ 
-  display:flex;   justify-content:center;   align-items:center;   height:100vh;   font-family:Arial; 
-} 
-.box{ 
-  border:1px solid black;   padding:20px;   text-align:center; 
-} 
-</style> 
-</head> 
-<body> 
- 
-<div class="box"> 
-  <h3>Login</h3> 
-  <form onsubmit="login(event)"> 
-    <input type="text" id="u" placeholder="Username"><br><br> 
-    <input type="password" id="p" placeholder="Password"><br><br> 
-    <button>Login</button> 
-  </form> 
-</div> 
- 
-<script> function login(e){ 
-  e.preventDefault();   var u=document.getElementById("u").value;   var p=document.getElementById("p").value; 
- 
-  if(u==p && u!="")     alert("Welcome");   else     alert("Wrong"); 
-} 
-</script> 
- 
-</body> 
-</html> 
- 
+## Student Profile Webpage (HTML & CSS)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Student Profile</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ }
+ .container {
+ display: flex;
+ width: 80%;
+ margin: auto;
+ border: 1px solid black;
+ }
+
+ .column1 {
+ width: 25%;
+ background-color: #f2f2f2;
+ padding: 20px;
+ }
+
+ .column2 {
+ width: 75%;
+ padding: 20px;
+ }
+
+ a {
+ display: block;
+ margin: 10px 0;
+ text-decoration: none;
+ color: blue;
+ font-weight: bold;
+ }
+
+ img {
+ width: 150px;
+ height: 150px;
+ border: 1px solid black;
+ }
+
+ </style>
+</head>	
+<body>
+<h2 align="center">Student Profile Page</h2>
+<div class="container">
+ <!-- Column 1 -->
+ <div class="column1">
+ <h3>Menu</h3>
+
+ <a href="#">Home</a>
+ <a href="#">Contact Us</a>
+ <a href="#">About Us</a>
+ </div>
+
+ <!-- Column 2 -->
+ <div class="column2">
+ <h3>Student Details</h3>
+ <p><b>Roll Number:</b> 101</p>
+ <p><b>Name:</b> Nikita</p>
+ <p><b>Contact:</b> 9876543210</p>
+ <p><b>Class:</b> TYBSc IT</p>
+ <p><b>Area of Interest:</b> Web Development</p>
+ <p><b>Photo:</b></p>
+ <img src="student.jpg" alt="Student Photo">
+ </div>
+</div>
+</body>
+</html>
+```
+q2-->
+## Simple Login Form (HTML, CSS, JavaScript)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+}
+.box{
+  border:1px solid black;
+  padding:20px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h3>Login</h3>
+  <form onsubmit="login(event)">
+    <input type="text" id="u" placeholder="Username"><br><br>
+    <input type="password" id="p" placeholder="Password"><br><br>
+    <button>Login</button>
+  </form>
+</div>
+
+<script>
+function login(e){
+  e.preventDefault();
+  var u=document.getElementById("u").value;
+  var p=document.getElementById("p").value;
+
+  if(u==p && u!="")
+    alert("Welcome");
+  else
+    alert("Wrong");
+}
+</script>
+
+</body>
+</html>
+```
 Slip no 8 :- q1  
-<!DOCTYPE html> 
-<html> 
-<head> 
- <title>Seven Colored Lines</title> 
- <style>   body{     text-align:center;     font-family: Arial, sans-serif; 
-  }   p{     font-size:18px;     font-weight:bold; 
-  } 
- </style> 
-</head> 
-<body> 
- 
-<h2>Seven Colored Lines</h2> 
- 
-<p style="color:red;">This line is Red</p> 
-<p style="color:blue;">This line is Blue</p> 
-<p style="color:green;">This line is Green</p> 
-<p style="color:orange;">This line is Orange</p> 
-<p style="color:purple;">This line is Purple</p> 
-<p style="color:brown;">This line is Brown</p> 
-<p style="color:black;">This line is Black</p> 
- 
-</body> 
-</html> 
+## HTML Program for Seven Colored Lines
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Seven Colored Lines</title>
+ <style>
+  body{
+    text-align:center;
+    font-family: Arial, sans-serif;
+  }
+  p{
+    font-size:18px;
+    font-weight:bold;
+  }
+ </style>
+</head>
+<body>
+
+<h2>Seven Colored Lines</h2>
+
+<p style="color:red;">This line is Red</p>
+<p style="color:blue;">This line is Blue</p>
+<p style="color:green;">This line is Green</p>
+<p style="color:orange;">This line is Orange</p>
+<p style="color:purple;">This line is Purple</p>
+<p style="color:brown;">This line is Brown</p>
+<p style="color:black;">This line is Black</p>
+
+</body>
+</html>
+```
+q2-->
 ## PHP Program for Password Validation
 
 ```php
@@ -262,175 +312,215 @@ Q2→
  
  
 Slip no 9 :- q1 
- 
-<!DOCTYPE html> 
-<html> 
-<head> 
- <title>Bus Ticket Reservation</title> 
- <style>  body { 
- font-family: Arial, sans-serif; 
- }  table {  margin: auto;  border-collapse: collapse; 
- }  td { 
-padding: 8px; 
-} 
-h2 { text-align: center; 
-} 
-</style> 
-</head> 
-<body> 
-<h2>Bus Ticket Reservation Form</h2> 
-<form> 
- 
-<table border="1"> 
- <tr> 
- <td>Name</td> 
- <td><input type="text" name="name"></td> 
- </tr> 
- <tr> 
- <td>Address</td> 
- <td><textarea name="address" rows="3" cols="20"></textarea></td> 
- </tr> 
- <tr> 
- <td>Contact No</td> 
- <td><input type="tel" name="contact"></td> 
- </tr> 
- <tr> 
- <td>Source Station</td>  <td> 
- <select name="source">  <option>Select</option> 
- <option>Mumbai</option> 
- <option>Pune</option> 
- <option>Nashik</option> 
- <option>Nagpur</option> 
- </select> 
- 
- </td> 
- </tr> 
- <tr> 
- <td>Destination Station</td>  <td> 
- <select name="destination"> 
- <option>Select</option> 
- <option>Mumbai</option> 
- <option>Pune</option> 
-<option>Nashik</option> 
-<option>Nagpur</option> 
-</select> 
-</td> 
-</tr> 
-<tr> 
-<td>Date of Booking</td> 
-<td><input type="date" name="booking_date"></td> 
-</tr> 
-<tr> 
-<td>Date of Journey</td> 
-<td><input type="date" name="journey_date"></td> 
-</tr> 
- <tr> 
- 
- <td>No. of Passengers</td> 
- <td><input type="number" name="passengers"></td> 
- </tr> 
- <tr> 
- <td>Name of Passenger</td> 
- <td><input type="text" name="passenger_name"></td> 
- </tr> 
- <tr> 
- <td>Gender of Passenger</td> 
- <td> 
- <input type="radio" name="gender"> Male 
- <input type="radio" name="gender"> Female 
- </td> 
- </tr> 
- <tr> 
- <td colspan="2" align="center"> 
- <input type="submit" value="Book Ticket"> 
- <input type="reset" value="Reset"> 
- </td> 
- </tr> 
-</table> 
-</form> 
-</body> 
- 
-</html> 
- Q2 -> 
-!DOCTYPE html> 
-<html> 
-<head> 
-<title>Customer Registration Form</title> 
-<style> body { font-family: Arial, sans-serif; 
-} table { margin: auto; border-collapse: collapse; 
-} td { 
-padding: 8px; 
-} 
-h2 { 
- text-align: center; 
- } 
- </style> 
-</head> 
- 
-<body> 
-<h2>Departmental Store Customer Registration</h2> 
-<form> 
-<table border="1"> 
- <tr> 
- <td>Name</td> 
- <td><input type="text" name="name"></td> 
- </tr> 
- <tr> 
- <td>Contact No</td> 
- <td><input type="tel" name="contact"></td> 
- </tr> 
- <tr> 
- <td>Gender</td> 
- <td> 
- <input type="radio" name="gender"> Male 
- <input type="radio" name="gender"> Female 
- <input type="radio" name="gender"> Other 
- </td> 
- </tr> 
- <tr> 
- <td>Preferred Days of Purchasing</td> 
- <td> 
- 
- <input type="checkbox" name="day"> Monday 
- <input type="checkbox" name="day"> Tuesday 
-<input type="checkbox" name="day"> Wednesday 
-<input type="checkbox" name="day"> Thursday 
-<input type="checkbox" name="day"> Friday 
-<input type="checkbox" name="day"> Saturday 
-<input type="checkbox" name="day"> Sunday 
-</td> 
-</tr> 
-<tr> 
-<td>Favorite Item</td> 
-<td> 
-<select name="item"> 
-<option>Select Item</option> 
-<option>Groceries</option> 
- <option>Clothes</option> 
- <option>Electronics</option> 
- <option>Stationery</option> 
- <option>Cosmetics</option> 
- </select> 
- </td> 
- </tr> 
- <tr> 
- 
- <td>Suggestions</td> 
- <td> 
- <textarea name="suggestions" rows="4" cols="25"></textarea> 
- </td> 
- </tr> 
- <tr> 
- <td colspan="2" align="center"> 
- <input type="submit" value="Submit"> 
- <input type="reset" value="Reset"> 
- </td> 
- </tr> 
-</table> 
-</form> 
-</body> 
-</html> 
- 
+ ## Bus Ticket Reservation Form (HTML & CSS)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Bus Ticket Reservation</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ }
+ table {
+ margin: auto;
+ border-collapse: collapse;
+ }
+ td {
+ padding: 8px;
+ }
+ h2 {
+ text-align: center;
+ }
+ </style>
+</head>
+<body>
+
+<h2>Bus Ticket Reservation Form</h2>
+
+<form>
+<table border="1">
+
+ <tr>
+ <td>Name</td>
+ <td><input type="text" name="name"></td>
+ </tr>
+
+ <tr>
+ <td>Address</td>
+ <td><textarea name="address" rows="3" cols="20"></textarea></td>
+ </tr>
+
+ <tr>
+ <td>Contact No</td>
+ <td><input type="tel" name="contact"></td>
+ </tr>
+
+ <tr>
+ <td>Source Station</td>
+ <td>
+ <select name="source">
+ <option>Select</option>
+ <option>Mumbai</option>
+ <option>Pune</option>
+ <option>Nashik</option>
+ <option>Nagpur</option>
+ </select>
+ </td>
+ </tr>
+
+ <tr>
+ <td>Destination Station</td>
+ <td>
+ <select name="destination">
+ <option>Select</option>
+ <option>Mumbai</option>
+ <option>Pune</option>
+ <option>Nashik</option>
+ <option>Nagpur</option>
+ </select>
+ </td>
+ </tr>
+
+ <tr>
+ <td>Date of Booking</td>
+ <td><input type="date" name="booking_date"></td>
+ </tr>
+
+ <tr>
+ <td>Date of Journey</td>
+ <td><input type="date" name="journey_date"></td>
+ </tr>
+
+ <tr>
+ <td>No. of Passengers</td>
+ <td><input type="number" name="passengers"></td>
+ </tr>
+
+ <tr>
+ <td>Name of Passenger</td>
+ <td><input type="text" name="passenger_name"></td>
+ </tr>
+
+ <tr>
+ <td>Gender of Passenger</td>
+ <td>
+ <input type="radio" name="gender"> Male
+ <input type="radio" name="gender"> Female
+ </td>
+ </tr>
+
+ <tr>
+ <td colspan="2" align="center">
+ <input type="submit" value="Book Ticket">
+ <input type="reset" value="Reset">
+ </td>
+ </tr>
+
+</table>
+</form>
+
+</body>
+</html>
+```
+q2-->
+## Customer Registration Form (HTML & CSS)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Customer Registration Form</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ }
+ table {
+ margin: auto;
+ border-collapse: collapse;
+ }
+ td {
+ padding: 8px;
+ }
+ h2 {
+ text-align: center;
+ }
+ </style>
+</head>
+
+<body>
+<h2>Departmental Store Customer Registration</h2>
+
+<form>
+<table border="1">
+
+ <tr>
+ <td>Name</td>
+ <td><input type="text" name="name"></td>
+ </tr>
+
+ <tr>
+ <td>Contact No</td>
+ <td><input type="tel" name="contact"></td>
+ </tr>
+
+ <tr>
+ <td>Gender</td>
+ <td>
+ <input type="radio" name="gender"> Male
+ <input type="radio" name="gender"> Female
+ <input type="radio" name="gender"> Other
+ </td>
+ </tr>
+
+ <tr>
+ <td>Preferred Days of Purchasing</td>
+ <td>
+ <input type="checkbox" name="day"> Monday
+ <input type="checkbox" name="day"> Tuesday
+ <input type="checkbox" name="day"> Wednesday
+ <input type="checkbox" name="day"> Thursday
+ <input type="checkbox" name="day"> Friday
+ <input type="checkbox" name="day"> Saturday
+ <input type="checkbox" name="day"> Sunday
+ </td>
+ </tr>
+
+ <tr>
+ <td>Favorite Item</td>
+ <td>
+ <select name="item">
+ <option>Select Item</option>
+ <option>Groceries</option>
+ <option>Clothes</option>
+ <option>Electronics</option>
+ <option>Stationery</option>
+ <option>Cosmetics</option>
+ </select>
+ </td>
+ </tr>
+
+ <tr>
+ <td>Suggestions</td>
+ <td>
+ <textarea name="suggestions" rows="4" cols="25"></textarea>
+ </td>
+ </tr>
+
+ <tr>
+ <td colspan="2" align="center">
+ <input type="submit" value="Submit">
+ <input type="reset" value="Reset">
+ </td>
+ </tr>
+
+</table>
+</form>
+
+</body>
+</html>
+```
 Slip 10  → 
 ## PHP Program to Create XML File (Student Data)
 
@@ -829,144 +919,162 @@ body {
 </html>
 ```
 Slip no 13:- q1 
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <title>Digit in Words</title> 
-    <style>         body {             font-family: Arial;             background-color: #f2f2f2;             text-align: center; 
-        } 
-        .box {             background: white;             padding: 20px;             width: 300px;             margin: auto;             margin-top: 100px;             border-radius: 10px; 
-            box-shadow: 0px 0px 10px gray; 
-        }         input {             padding: 8px;             margin: 5px; 
-        } 
- 	button { 
-            padding: 8px 15px;             background: blue;             color: white;             border: none;             border-radius: 5px; 
-        } 
-        .result {             margin-top: 15px;             font-weight: bold;             color: green; 
-        } 
- 
-            </style> 
-</head> 
- 
-<body> 
- 
-<div class="box"> 
-    <h2>Digit in Words</h2> 
- 
-    <form method="post"> 
-        <input type="text" name="num" placeholder="Enter number" required><br> 
-        <button type="submit">Convert</button> 
-    </form> 
- 
-    <?php     if(isset($_POST['num'])) 
-    { 
-        $num = $_POST['num']; 
- 
-        echo "<div class='result'>";         echo "Number: " . $num . "<br>";         echo "Words: "; 
- 
-        for($i = 0; $i < strlen($num); $i++) 
-        { 
-            switch($num[$i]) 
-            { 
-                case '0': echo "Zero "; break;                 case '1': echo "One "; break;                 case '2': echo "Two "; break;                 case '3': echo "Three "; break;                 case '4': echo "Four "; break;                 case '5': echo "Five "; break;                 case '6': echo "Six "; break;                 case '7': echo "Seven "; break;                 case '8': echo "Eight "; break;                 case '9': echo "Nine "; break; 
-            } 
-        } 
- 
-        echo "</div>"; 
+## PHP Program to Convert Digits into Words
+
+```php
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit in Words</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            width: 300px;
+            margin: auto;
+            margin-top: 100px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Digit in Words</h2>
+
+    <form method="post">
+        <input type="text" name="num" placeholder="Enter number" required><br>
+        <button type="submit">Convert</button>
+    </form>
+
+    <?php
+    if(isset($_POST['num']))
+    {
+        $num = $_POST['num'];
+
+        echo "<div class='result'>";
+        echo "Number: " . $num . "<br>";
+        echo "Words: ";
+
+        for($i = 0; $i < strlen($num); $i++)
+        {
+            switch($num[$i])
+            {
+                case '0': echo "Zero "; break;
+                case '1': echo "One "; break;
+                case '2': echo "Two "; break;
+                case '3': echo "Three "; break;
+                case '4': echo "Four "; break;
+                case '5': echo "Five "; break;
+                case '6': echo "Six "; break;
+                case '7': echo "Seven "; break;
+                case '8': echo "Eight "; break;
+                case '9': echo "Nine "; break;
+            }
+        }
+
+        echo "</div>";
+    }
+    ?>
+</div>
+
+</body>
+</html>
+```
+## PHP Program to Convert Digits into Words (Using Array)
+
+```php
+<html>
+<head>
+    <title>digit in words</title>
+    <style>
+    body{
+        display: flex;
+        margin: auto;
+    }
+    .box{
+        background: white;
+        width: 20%;
+        padding: 20px;
+        border: 1px solid black;
+        margin: auto;
+        box-shadow: 1px 1px 10px pink;
     } 
-    ?> 
-</div> 
- 
-</body> 
-</html> 
- 
-Q2→ 
-<html> 
-<head> 
- 	<title> digit in words </title> 
- 	<style>  	body{ 
- 	display: flex;  	//justify-content: center; 
- 	//align-text: center; 
- 	//height: 100vh; 
- 	//font-family: Arial; 
- 	} 
- 	.box{ 
- 	background: white;  	width: 20%;  	padding: 20px;  	border: 1px solid black;  	margin: auto;  	box-shadow: 1px 1px 10px pink; 
- 	}  
- 	input { 
-            padding: 8px;             margin: 5px; 
-        } 
- 	 
- 	</style> 
-</head> 
-<body> 
- 	<div class="box"> 
- 	<h3> enter a digits </h3> 
- 	<form method="post"> 
-    Enter Number: <input type="text" name="number" required> 
-    <input type="submit" value="Convert"> 
-</form> 
- 
-<?php if(isset($_POST['number'])) { 
-    $number = $_POST['number'];   // ✅ semicolon added 
- 
-    $digits = str_split($number); 
- 
-    $words = array( 
-        "0" => "Zero", 
-        "1" => "One", 
-        "2" => "Two", 
-        "3" => "Three", 
-        "4" => "Four", 
-        "5" => "Five", 
-        "6" => "Six", 
-        "7" => "Seven", 
-        "8" => "Eight", 
-        "9" => "Nine" 
-    ); 
- 
-    echo "<strong>Entered Number:</strong> " . $number . "<br><br>";     echo "<strong>Digits in Words:</strong><br>"; 
- 
-    foreach($digits as $digit) {         if(array_key_exists($digit, $words)) {             echo $words[$digit] . " "; 
-        } 
-    } 
-} 
-?> 
- 
- 
- 	 
- 	</div> 
-</body> 
-</html> 
- 
-Slip 14 ->q1 Create.html file 
-<html> 
-<head> 
-<title>Product Selection</title> 
-</head> 
-<body> 
- 
-<h2 style="text-align:center;">Select Products</h2> 
- 
-<form method="post" action="s14q1bill.php"  
-      style="width:300px; margin:auto; border:1px solid black; padding:10px;"> 
- 
-    Books (200):<br> 
-    <input type="number" name="book_qty" value="0"><br><br> 
- 
-    Pens (10):<br> 
-    <input type="number" name="pen_qty" value="0"><br><br> 
- 
-    Bags (500):<br> 
-    <input type="number" name="bag_qty" value="0"><br><br> 
- 
-    <input type="submit" value="Generate Bill"> 
- 
-</form> 
- 
-</body> 
-</html> 
-Slip14 q1 
+    input {
+        padding: 8px;
+        margin: 5px;
+    }
+    </style>
+</head>
+<body>
+
+<div class="box">
+<h3>Enter a digits</h3>
+
+<form method="post">
+    Enter Number: <input type="text" name="number" required>
+    <input type="submit" value="Convert">
+</form>
+
+<?php
+if(isset($_POST['number'])) {
+    $number = $_POST['number'];
+
+    $digits = str_split($number);
+
+    $words = array(
+        "0" => "Zero",
+        "1" => "One",
+        "2" => "Two",
+        "3" => "Three",
+        "4" => "Four",
+        "5" => "Five",
+        "6" => "Six",
+        "7" => "Seven",
+        "8" => "Eight",
+        "9" => "Nine"
+    );
+
+    echo "<strong>Entered Number:</strong> " . $number . "<br><br>";
+    echo "<strong>Digits in Words:</strong><br>";
+
+    foreach($digits as $digit) {
+        if(array_key_exists($digit, $words)) {
+            echo $words[$digit] . " ";
+        }
+    }
+}
+?>
+
+</div>
+
+</body>
+</html>
+```
+ Slip14 q1 
 ## HTML Form for Product Selection
 
 ```html
