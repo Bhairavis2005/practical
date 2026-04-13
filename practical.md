@@ -962,7 +962,39 @@ Slip 14 ->q1 Create.html file
  
 </body> 
 </html> 
-S14 q1 bill.php → file name 
+Slip14 q1 
+## HTML Form for Product Selection
+
+```html
+<html>
+<head>
+<title>Product Selection</title>
+</head>
+<body>
+
+<h2 style="text-align:center;">Select Products</h2>
+
+<form method="post" action="bill.php" 
+      style="width:300px; margin:auto; border:1px solid black; padding:10px;">
+
+    Books (200):<br>
+    <input type="number" name="book_qty" value="0"><br><br>
+
+    Pens (10):<br>
+    <input type="number" name="pen_qty" value="0"><br><br>
+
+    Bags (500):<br>
+    <input type="number" name="bag_qty" value="0"><br><br>
+
+    <input type="submit" value="Generate Bill">
+
+</form>
+
+</body>
+</html>
+```
+
+bill.php → file name 
 ## PHP Program to Calculate Bill
 
 ```php
