@@ -427,55 +427,68 @@ h2 {
 </body> 
 </html> 
  
-Slip 10  → q1 Slip no 5:- q1 
- 
-Run this in phpMyAdmin / MySQL: 
- 	CREATE DATABASE userdb; 
- CREATE TABLE users (  
- 	id INT AUTO_INCREMENT PRIMARY KEY,  	 fullname VARCHAR(100),   	 contact VARCHAR(15),   	email VARCHAR(100),  	password VARCHAR(255) 
-);   
-<?php 
-$message = ""; if ($_SERVER["REQUEST_METHOD"]=="POST"){ 
-    $fullName = $_POST["name"];     $contact = $_POST["contact"]; 
-    $email = $_POST["email"]; 
-    $password = $_POST["password"]; 
-    $confirmPass = $_POST["confirm-pass"]; 
- 
-    if ($password !== $confirmPass){ 
-        $message = "<p>Password and confirm password not matched</p>"; 
-    }else{ 
-        $hashed = password_hash($password , PASSWORD_DEFAULT); 
- 
-        $conn = new mysqli("localhost" , "root","","userdb");         if ($conn->connect_error){             die("Connection Failed"); 
-        } 
-        $stmt = $conn -> prepare("INSERT into users(fullname , contact , email , password) 
-VALUES(?,?,?,?)"); 
-        $stmt -> bind_param('ssss',$fullName, $contact,$email,$hashed);         if ($stmt->execute()){ 
-            $message = "<p>Registration Successfull</p>"; 
-        }else{ 
-            $message = "<p>Error Occured</p>"; 
-        } 
-    } 
-} 
-?> 
- 
-<html> 
-    <head> 
-        <title>Store a password</title> 
-    </head> 
-    <body> 
-        <h1>Registration form</h1> 
-        <form method="post"> 
-            Full Name: <input type="text" name="name" required><br><br> 
-            Contact: <input type="number" name="contact" required><br><br> 
-            E-mail: <input type="email" name="email" required><br><br> 
-            Password: <input type="password" name="password" required><br><br> 
-           Confirm Password: <input type="password" name="confirm-pass" required><br><br> 
-           <input type="submit" value="Submit"> 
-        </form> 
-        <?php echo "$message";?> 
-    </body> 
-</html> 
+Slip 10  → 
+<?php
+// Create XML document
+$xml = new DOMDocument("1.0", "UTF-8");
+$xml->formatOutput = true;
+
+// Root element
+$root = $xml->createElement("root");
+$xml->appendChild($root);
+
+// Student 1
+$student = $xml->createElement("Student");
+$student->appendChild($xml->createElement("StudentID", "101"));
+$student->appendChild($xml->createElement("Name", "Amit"));
+$student->appendChild($xml->createElement("Age", "20"));
+$student->appendChild($xml->createElement("Gender", "Male"));
+$student->appendChild($xml->createElement("Program", "BSc"));
+$root->appendChild($student);
+
+// Student 2
+$student = $xml->createElement("Student");
+$student->appendChild($xml->createElement("StudentID", "102"));
+$student->appendChild($xml->createElement("Name", "Priya"));
+$student->appendChild($xml->createElement("Age", "21"));
+$student->appendChild($xml->createElement("Gender", "Female"));
+$student->appendChild($xml->createElement("Program", "BCA"));
+$root->appendChild($student);
+
+// Student 3
+$student = $xml->createElement("Student");
+$student->appendChild($xml->createElement("StudentID", "103"));
+$student->appendChild($xml->createElement("Name", "Rahul"));
+$student->appendChild($xml->createElement("Age", "22"));
+$student->appendChild($xml->createElement("Gender", "Male"));
+$student->appendChild($xml->createElement("Program", "BSc"));
+$root->appendChild($student);
+
+// Student 4
+$student = $xml->createElement("Student");
+$student->appendChild($xml->createElement("StudentID", "104"));
+$student->appendChild($xml->createElement("Name", "Sneha"));
+$student->appendChild($xml->createElement("Age", "20"));
+$student->appendChild($xml->createElement("Gender", "Female"));
+$student->appendChild($xml->createElement("Program", "BBA"));
+$root->appendChild($student);
+
+// Student 5
+$student = $xml->createElement("Student");
+$student->appendChild($xml->createElement("StudentID", "105"));
+$student->appendChild($xml->createElement("Name", "Karan"));
+$student->appendChild($xml->createElement("Age", "23"));
+$student->appendChild($xml->createElement("Gender", "Male"));
+$student->appendChild($xml->createElement("Program", "BCom"));
+$root->appendChild($student);
+
+// Save XML file
+$xml->save("Studentt.xml");
+
+echo "Studentt.xml file created successfully!";
+?>
+
+   
  
 Q2→ 
 <!DOCTYPE html> 
