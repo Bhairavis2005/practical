@@ -739,69 +739,91 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?> 
  
 Q2→ 
-<?php 
-$message = ""; if ($_SERVER['REQUEST_METHOD']=='POST'){ 
-     
-    $string1 = $_POST["string1"]; 
-    $string2 = $_POST["string2"]; 
-    $operation = $_POST["operation"]; 
- 
-    switch($operation){         case "compare": 
-            if ($string1==$string2){ 
-                $message = "Both Strings are Equal"; 
-            }else{ 
-                $message = "<p>Strings are Different</p>";             }             break; 
- 
-        case "upper": 
-            $upp_str1 = strtoupper($string1); 
-            $upp_str2 = strtoupper($string2); 
-            $message = "<p>Upper string 1 : $upp_str1 <br> Upper string 2 : $upp_str2</p>";             break; 
- 
-        case "lower": 
-            $low_str1 = strtolower($string1); 
-            $low_str2 = strtolower($string2); 
-            $message = "<p>Lower string 1 : $low_str1 <br> Lower string 2 : $low_str2</p>";             break; 
-    } 
-} 
-?> 
- 
-<html> 
-<head> 
-<title>Operations on strings</title> 
- 
-<style> body {     display: flex;     justify-content: center;     align-items: center;     height: 100vh;     font-family: Arial; 
-} 
- 
-.box {     border: 1px solid black;     padding: 30px;     text-align: center;     width: 350px;     border-radius: 10px; 
-} 
-</style> 
- 
-</head> 
- 
-<body> 
- 
-<div class="box"> 
-    <h1>Operations on String</h1> 
- 
-    <form method="post"> 
-        <h3>Enter Details</h3> 
-        String 1: <input type="text" name="string1" required><br><br>         String 2: <input type="text" name="string2" required><br><br> 
- 
-        Operations: <br> 
-        <input type="radio" name="operation" value="compare" required>a. Compare string <br> 
-        <input type="radio" name="operation" value="upper"> b. convert to Upper<br> 
-        <input type="radio" name="operation" value="lower"> c.convert to Lower<br><br> 
- 
-        <button type="submit">Check</button> 
-    </form> 
- 
-    <br> 
-    <?php echo $message; ?> 
-</div> 
- 
-</body> 
-</html> 
-  
+## PHP Program for String Operations
+
+```php
+<?php
+$message = "";
+if ($_SERVER['REQUEST_METHOD']=='POST'){
+    
+    $string1 = $_POST["string1"];
+    $string2 = $_POST["string2"];
+    $operation = $_POST["operation"];
+
+    switch($operation){
+        case "compare":
+            if ($string1==$string2){
+                $message = "Both Strings are Equal";
+            }else{
+                $message = "<p>Strings are Different</p>";
+            }
+            break;
+
+        case "upper":
+            $upp_str1 = strtoupper($string1);
+            $upp_str2 = strtoupper($string2);
+            $message = "<p>Upper string 1 : $upp_str1 <br> Upper string 2 : $upp_str2</p>";
+            break;
+
+        case "lower":
+            $low_str1 = strtolower($string1);
+            $low_str2 = strtolower($string2);
+            $message = "<p>Lower string 1 : $low_str1 <br> Lower string 2 : $low_str2</p>";
+            break;
+    }
+}
+?>
+
+<html>
+<head>
+<title>Operations on strings</title>
+
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+
+.box {
+    border: 1px solid black;
+    padding: 30px;
+    text-align: center;
+    width: 350px;
+    margin: auto;
+    border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+    <h1 style="color:red">Operations on String</h1>
+
+    <form method="post">
+        <h3>Enter Details</h3>
+        String 1: <input type="text" name="string1" required><br><br>
+        String 2: <input type="text" name="string2" required><br><br>
+
+        Operations: <br>
+        <input type="radio" name="operation" value="compare" required>a. Compare string <br>
+        <input type="radio" name="operation" value="upper"> b. convert to Upper<br>
+        <input type="radio" name="operation" value="lower"> c.convert to Lower<br><br>
+
+        <button type="submit">Check</button>
+    </form>
+
+    <br>
+    <?php echo $message; ?>
+</div>
+
+</body>
+</html>
+```
 Slip no 13:- q1 
 <!DOCTYPE html> 
 <html> 
