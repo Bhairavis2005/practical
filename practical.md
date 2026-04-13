@@ -962,24 +962,34 @@ Slip 14 ->q1 Create.html file
  
 </body> 
 </html> 
-S14q1bill.php → file name 
-<?php 
-// Prices 
-$book_price = 200; 
-$pen_price = 10; 
-$bag_price = 500; 
-// Quantities from form 
-$book_qty = $_POST['book_qty']; 
-$pen_qty = $_POST['pen_qty']; 
-$bag_qty = $_POST['bag_qty']; 
-// Calculate totals 
-$book_total = $book_qty * $book_price; 
-$pen_total = $pen_qty * $pen_price; 
-$bag_total = $bag_qty * $bag_price; 
-$grand_total = $book_total + $pen_total + $bag_total; echo "<h2>Bill Details</h2>"; echo "Books: $book_qty × 200 = $book_total <br><br>"; 
- 
-echo "Pens: $pen_qty × 10 = $pen_total <br><br>"; echo "Bags: $bag_qty × 500 = $bag_total <br><br>"; echo "<h3>Grand Total: $grand_total</h3>"; 
-?> 
+S14 q1 bill.php → file name 
+## PHP Program to Calculate Bill
+
+```php
+<?php
+// Prices
+$book_price = 200;
+$pen_price = 10;
+$bag_price = 500;
+
+// Quantities from form
+$book_qty = $_POST['book_qty'];
+$pen_qty = $_POST['pen_qty'];
+$bag_qty = $_POST['bag_qty'];
+
+// Calculate totals
+$book_total = $book_qty * $book_price;
+$pen_total = $pen_qty * $pen_price;
+$bag_total = $bag_qty * $bag_price;
+$grand_total = $book_total + $pen_total + $bag_total;
+
+echo "<h2>Bill Details</h2>";
+echo "Books: $book_qty × 200 = $book_total <br><br>";
+echo "Pens: $pen_qty × 10 = $pen_total <br><br>";
+echo "Bags: $bag_qty × 500 = $bag_total <br><br>";
+echo "<h3>Grand Total: $grand_total</h3>";
+?>
+```
   
 q2-> 
 OWASP Top 10 Threats for Web Applications (Introduction) 
