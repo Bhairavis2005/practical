@@ -428,6 +428,9 @@ h2 {
 </html> 
  
 Slip 10  → 
+## PHP Program to Create XML File (Student Data)
+
+```php
 <?php
 // Create XML document
 $xml = new DOMDocument("1.0", "UTF-8");
@@ -487,6 +490,13 @@ $xml->save("Studentt.xml");
 
 echo "Studentt.xml file created successfully!";
 ?>
+```
+
+
+
+
+
+
 
    
  
