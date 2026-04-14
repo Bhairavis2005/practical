@@ -879,38 +879,43 @@ HRA: <?php echo $hra; ?><br><br>
  Slip 12 →q1 
  
 Run as localhost/s12q1.html 
-<html> 
-<body> 
- 
-<form method="post" action="s12q1.php"> 
-    Radius: <input type="text" name="r"><br><br>     Height: <input type="text" name="h"><br><br>
-    <input type="submit" value="Calculate"> 
-</form> 
- 
-</body> 
-</html> 
- File name:- s12q2.php 
-<?php 
- 
-function cylinder($r, $h) 
-{ 
-    $area = 2 * pi() * $r * ($r + $h); 
-    $volume = pi() * $r * $r * $h; 
- 
-    echo "Area = " . $area . "<br>";     echo "Volume = " . $volume; 
-} 
- 
-// FIX: check if form is submitted 
-if ($_SERVER["REQUEST_METHOD"] == "POST") { 
- 
-    $r = $_POST['r']; 
-    $h = $_POST['h']; 
- 
-    cylinder($r, $h); 
-} 
- 
-?> 
- 
+ ## PHP Program to Calculate Area and Volume of Cylinder
+
+```php
+<html>
+<body>
+
+<form method="post" action="s12q1.php">
+    Radius: <input type="text" name="r"><br><br>
+    Height: <input type="text" name="h"><br><br>
+    <input type="submit" value="Calculate">
+</form>
+
+</body>
+</html>
+
+<?php
+
+function cylinder($r, $h)
+{
+    $area = 2 * pi() * $r * ($r + $h);
+    $volume = pi() * $r * $r * $h;
+
+    echo "Area = " . $area . "<br>";
+    echo "Volume = " . $volume;
+}
+
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $r = $_POST['r'];
+    $h = $_POST['h'];
+
+    cylinder($r, $h);
+}
+
+?>
+```
 Q2→ 
 ## PHP Program for String Operations
 
