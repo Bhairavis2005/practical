@@ -1556,46 +1556,66 @@ echo "CourseRegistrations.xml file created successfully!";
 
  
 Slip no 21 q1→ 
-<!DOCTYPE html> 
-<html> 
-<head> 
-    <title>Factorial</title> 
-    <style>         body { 
-            font-family: Arial;             text-align: center;             background-color: #f2f2f2; 
-        }         .box { 
-            background: white;             width: 250px;             margin: auto;             margin-top: 100px;             padding: 15px;             border: 1px solid gray; 
-        } 
-           </style> 
-</head> 
- 
-<body> 
- 
-<div class="box"> 
-    <h3>Factorial</h3> 
- 
-    <form method="post"> 
-        <input type="number" name="num" placeholder="Enter number" required> <br> 
-        <input type="submit" value="Find"> 
-    </form> 
- 
-    <?php     function fact($n) 
-    { 
-        $f = 1;         for($i = 1; $i <= $n; $i++) 
-        { 
-            $f = $f * $i; 
-        } 
-        return $f; 
-    } 
- 
-    if(isset($_POST['num'])) 
-    { 
-        $num = $_POST['num'];         echo "<div class='result'>";         echo "Factorial = " . fact($num);         echo "</div>"; 
-    } 
-    ?> 
-</div> 
- 
-</body> 
-</html> 
+# Factorial Program (PHP)
+
+## Code
+
+~~~html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        .box {
+            background: white;
+            width: 250px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 15px;
+            border: 1px solid gray;
+        }
+           </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h3>Factorial</h3>
+
+    <form method="post">
+        <input type="number" name="num" placeholder="Enter number" required> <br>
+        <input type="submit" value="Find">
+    </form>
+
+    <?php
+    function fact($n)
+    {
+        $f = 1;
+        for($i = 1; $i <= $n; $i++)
+        {
+            $f = $f * $i;
+        }
+        return $f;
+    }
+
+    if(isset($_POST['num']))
+    {
+        $num = $_POST['num'];
+        echo "<div class='result'>";
+        echo "Factorial = " . fact($num);
+        echo "</div>";
+    }
+    ?>
+</div>
+
+</body>
+</html>
+~~~
    
 Q2→ 
 OWASP ZAP Scanner (Short Note) 
