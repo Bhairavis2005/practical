@@ -1334,45 +1334,73 @@ In this attack, the hacker tricks the server into making requests to internal or
 👉 Example: The server is forced to access internal data which should not be available to outside users.
   
  Slip no 15 q1 
- 
- Q 1. Write a short report explaining: [15M] a) The identified threat.  a) The Identified Threat – SQL Injection 
-The identified threat is SQL Injection, which is a common and dangerous attack on web applications. In this attack, a hacker inserts malicious SQL code into input fields like login forms, search boxes, or contact forms. 
-This problem occurs when the application does not properly validate or filter user input. Instead of treating the input as normal data, the system executes it as part of a database query. Because of this, attackers can manipulate the query and gain unauthorized access to the database. 
-SQL Injection can lead to serious problems such as data theft, data modification, or even deletion of important information. Attackers can view sensitive details like usernames, passwords, and personal data. 
-👉 Example: 
- If a login form directly uses user input in an SQL query, an attacker can enter special code like ' OR '1'='1, which makes the condition always true and allows login without a correct password. 
- 
- 
-b) How the Threat Was Exploited 
-The attacker exploited the vulnerability by taking advantage of weak input validation in the login form. The application did not properly check or filter the user input before sending it to the database. 
-Instead of entering a valid username and password, the attacker entered special SQL code like: 
-' OR '1'='1 
-This condition is always true. When the application includes this input in the SQL query, the database returns all records as valid. Because of this, the system does not verify the correct password and allows the attacker to log in successfully. 
-In this way, the attacker bypassed the authentication process and gained unauthorized access to the system. After logging in, the attacker could access sensitive data, and may also modify or delete important information from the database. 
-c) Steps Taken to Mitigate the Vulnerability 
-To protect the application from SQL Injection, several important steps were taken: 
-1. Input Validation and Sanitization 
- All user inputs are checked carefully. Only valid characters are allowed, and harmful inputs are removed. 
-2. Use of Prepared Statements (Parameterized Queries) 
- Prepared statements are used instead of directly writing SQL queries. This ensures that user input is treated only as data, not as executable code. 
-3. Use of Strong Password Security 
- Passwords are stored in encrypted (hashed) form, so even if data is accessed, it cannot be easily understood. 
-4. Limiting Database Permissions 
- The database user is given only limited permissions. This reduces the damage even if an attack happens. 
-5. Error Handling 
- Detailed error messages are hidden from users, so attackers cannot get useful information about the database. 
-6. Regular Testing and Updates 
- The application is tested regularly to find and fix security issues. 
-  
-7. Use of Web Application Firewall (WAF) 
- A firewall is used to detect and block malicious requests before they reach the application. 
-8. Use of Stored Procedures 
- Stored procedures are used to execute database queries safely, reducing direct interaction with SQL queries. 
-9. Session Management Security 
- Proper session handling is implemented, such as automatic logout and secure session IDs, to prevent misuse after login. 
-10. Use of Latest Software and Updates 
- Keeping software, frameworks, and databases updated helps fix known vulnerabilities and improves security. 
-  
+
+# Slip No 15 - Q1
+
+## Q1. Write a short report explaining [15M]
+
+---
+
+### a) The Identified Threat – SQL Injection
+
+The identified threat is SQL Injection, which is a common and dangerous attack on web applications. In this attack, a hacker inserts malicious SQL code into input fields like login forms, search boxes, or contact forms.
+
+This problem occurs when the application does not properly validate or filter user input. Instead of treating the input as normal data, the system executes it as part of a database query. Because of this, attackers can manipulate the query and gain unauthorized access to the database.
+
+SQL Injection can lead to serious problems such as data theft, data modification, or even deletion of important information. Attackers can view sensitive details like usernames, passwords, and personal data.
+
+Example:
+' OR '1'='1
+
+This makes the condition always true and allows login without a correct password.
+
+---
+
+### b) How the Threat Was Exploited
+
+The attacker exploited the vulnerability by taking advantage of weak input validation in the login form. The application did not properly check or filter the user input before sending it to the database.
+
+Instead of entering a valid username and password, the attacker entered special SQL code like:
+
+' OR '1'='1
+
+This condition is always true. When the application includes this input in the SQL query, the database returns all records as valid. Because of this, the system does not verify the correct password and allows the attacker to log in successfully.
+
+In this way, the attacker bypassed the authentication process and gained unauthorized access to the system. After logging in, the attacker could access sensitive data, and may also modify or delete important information from the database.
+
+---
+
+### c) Steps Taken to Mitigate the Vulnerability
+
+- Input Validation and Sanitization  
+  All user inputs are checked carefully. Only valid characters are allowed, and harmful inputs are removed.
+
+- Use of Prepared Statements (Parameterized Queries)  
+  Prepared statements are used instead of directly writing SQL queries. This ensures that user input is treated only as data, not as executable code.
+
+- Use of Strong Password Security  
+  Passwords are stored in encrypted (hashed) form, so even if data is accessed, it cannot be easily understood.
+
+- Limiting Database Permissions  
+  The database user is given only limited permissions. This reduces the damage even if an attack happens.
+
+- Error Handling  
+  Detailed error messages are hidden from users, so attackers cannot get useful information about the database.
+
+- Regular Testing and Updates  
+  The application is tested regularly to find and fix security issues.
+
+- Use of Web Application Firewall (WAF)  
+  A firewall is used to detect and block malicious requests before they reach the application.
+
+- Use of Stored Procedures  
+  Stored procedures are used to execute database queries safely, reducing direct interaction with SQL queries.
+
+- Session Management Security  
+  Proper session handling is implemented, such as automatic logout and secure session IDs, to prevent misuse after login.
+
+- Use of Latest Software and Updates  
+  Keeping software, frameworks, and databases updated helps fix known vulnerabilities and improves security.
   
 Q2→ 
 <?php  
