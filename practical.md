@@ -1050,83 +1050,84 @@ Slip no 13:- q1
 ## PHP Program to Convert Digits into Words
 
 ```php
-<!DOCTYPE html>
 <html>
 <head>
     <title>Digit in Words</title>
+
     <style>
-        body {
-            font-family: Arial;
-            background-color: #f2f2f2;
-            text-align: center;
-        }
-        .box {
-            background: white;
-            padding: 20px;
-            width: 300px;
-            margin: auto;
-            margin-top: 100px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px gray;
-        }
-        input {
-            padding: 8px;
-            margin: 5px;
-        }
-        button {
-            padding: 8px 15px;
-            background: blue;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-        .result {
-            margin-top: 15px;
-            font-weight: bold;
-            color: green;
-        }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial;
+        background: #f9f9f9;
+    }
+
+    .box{
+        background: white;
+        width: 300px;
+        padding: 20px;
+        border: 1px solid black;
+        margin: auto;
+        box-shadow: 1px 1px 10px pink;
+        text-align: center;
+        border-radius: 10px;
+    } 
+
+    input {
+        padding: 8px;
+        margin: 5px;
+        width: 80%;
+    }
     </style>
 </head>
 
 <body>
 
 <div class="box">
-    <h2>Digit in Words</h2>
+<h3>Enter a digit</h3>
 
-    <form method="post">
-        <input type="text" name="num" placeholder="Enter number" required><br>
-        <button type="submit">Convert</button>
-    </form>
+<form method="post">
+    <input type="text" name="number" placeholder="Enter number" required><br>
+    <input type="submit" value="Convert">
+</form>
 
-    <?php
-    if(isset($_POST['num']))
-    {
-        $num = $_POST['num'];
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        echo "<div class='result'>";
-        echo "Number: " . $num . "<br>";
-        echo "Words: ";
+    $number = $_POST['number'];
 
-        for($i = 0; $i < strlen($num); $i++)
-        {
-            switch($num[$i])
-            {
-                case '0': echo "Zero "; break;
-                case '1': echo "One "; break;
-                case '2': echo "Two "; break;
-                case '3': echo "Three "; break;
-                case '4': echo "Four "; break;
-                case '5': echo "Five "; break;
-                case '6': echo "Six "; break;
-                case '7': echo "Seven "; break;
-                case '8': echo "Eight "; break;
-                case '9': echo "Nine "; break;
-            }
+    // Check if input is numeric
+    if(!ctype_digit($number)){
+        echo "<p style='color:red;'>Please enter only digits (0-9)</p>";
+    } else {
+
+        $digits = str_split($number);
+
+        $words = array(
+            "0" => "Zero",
+            "1" => "One",
+            "2" => "Two",
+            "3" => "Three",
+            "4" => "Four",
+            "5" => "Five",
+            "6" => "Six",
+            "7" => "Seven",
+            "8" => "Eight",
+            "9" => "Nine"
+        );
+
+        echo "<strong>Entered Number:</strong> $number <br><br>";
+        echo "<strong>Digits in Words:</strong><br>";
+
+        foreach($digits as $digit) {
+            echo $words[$digit] . " ";
         }
-
-        echo "</div>";
     }
-    ?>
+}
+?>
+
 </div>
 
 </body>
