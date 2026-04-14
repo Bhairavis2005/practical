@@ -123,7 +123,114 @@ function login(e){
 </body>
 </html>
 ```
-Slip no 8 :- q1  
+slip5 q1-->
+## User Registration System (MySQL + HTML + PHP)
+
+### Step 1: Create Database and Table
+
+```sql
+CREATE DATABASE userdb;
+
+CREATE TABLE users (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ fullname VARCHAR(100),
+ contact VARCHAR(15),
+ email VARCHAR(100),
+ password VARCHAR(255)
+);
+```
+
+---
+
+### Step 2: Registration Form (register.html)
+
+```html
+<html>
+<head>
+ <title>User Registration</title>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form method="post" action="register.php">
+Full Name:
+<input type="text" name="fullname" required>
+<br><br>
+
+Contact No:
+<input type="text" name="contact" required>
+<br><br>
+
+Email:
+<input type="email" name="email" required>
+<br><br>
+
+Password:
+<input type="password" name="password" required>
+<br><br>
+
+Confirm Password:
+<input type="password" name="confirm_password" required>
+<br><br>
+
+<input type="submit" name="submit" value="Register">
+</form>
+
+</body>
+</html>
+```
+
+---
+
+### Step 3: PHP Backend (register.php)
+
+```php
+<?php
+// Database connection
+$conn = mysqli_connect("localhost", "root", "", "userdb");
+
+// Check connection
+if (!$conn) {
+    echo "Connection Failed: " . mysqli_connect_error();
+}
+
+// Check form submit
+if (isset($_POST['submit'])) {
+
+    // Get form data
+    $fullname = $_POST['fullname'];
+    $contact = $_POST['contact'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
+
+    // Check password match
+    if ($password != $confirm_password) {
+        echo "Password and Confirm Password do not match!";
+        exit();
+    }
+
+    // Encrypt password
+    $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insert query
+    $sql = "INSERT INTO users (fullname, contact, email, password)
+            VALUES ('$fullname', '$contact', '$email', '$encrypted_password')";
+
+    // Execute query
+    if (mysqli_query($conn, $sql)) {
+        echo "Registration Successful!";
+    } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+}
+
+// Close connection
+mysqli_close($conn);
+?>
+```
+Slip8 --> q1  
 ## HTML Program for Seven Colored Lines
 
 ```html
@@ -206,111 +313,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 ```
-  
-
- 
-Slip no 5:- q1 
- 
-Run this in phpMyAdmin / MySQL: 
- 	CREATE DATABASE userdb; 
- CREATE TABLE users (  
- 	id INT AUTO_INCREMENT PRIMARY KEY,  	 fullname VARCHAR(100),   	 contact VARCHAR(15),   	email VARCHAR(100),  	 password VARCHAR(255) 
- );   
-<?php 
-$message = ""; if ($_SERVER["REQUEST_METHOD"]=="POST"){ 
-    $fullName = $_POST["name"];     $contact = $_POST["contact"]; 
-    $email = $_POST["email"]; 
-    $password = $_POST["password"]; 
-    $confirmPass = $_POST["confirm-pass"]; 
- 
-    if ($password !== $confirmPass){ 
-        $message = "<p>Password and confirm password not matched</p>"; 
-    }else{ 
-        $hashed = password_hash($password , PASSWORD_DEFAULT); 
- 
-        $conn = new mysqli("localhost" , "root","","userdb");         if ($conn->connect_error){             die("Connection Failed"); 
-        } 
-        $stmt = $conn -> prepare("INSERT into users(fullname , contact , email , password) 
-VALUES(?,?,?,?)"); 
-        $stmt -> bind_param('ssss',$fullName, $contact,$email,$hashed);         if ($stmt->execute()){ 
-            $message = "<p>Registration Successfull</p>"; 
-        }else{ 
-            $message = "<p>Error Occured</p>"; 
-        } 
-    } 
-} 
-?> 
- 
-<html> 
-    <head> 
-        <title>Store a password</title> 
-    </head> 
-    <body> 
-        <h1>Registration form</h1> 
-        <form method="post"> 
-            Full Name: <input type="text" name="name" required><br><br> 
-            Contact: <input type="number" name="contact" required><br><br> 
-            E-mail: <input type="email" name="email" required><br><br> 
-            Password: <input type="password" name="password" required><br><br> 
-           Confirm Password: <input type="password" name="confirm-pass" required><br><br> 
-           <input type="submit" value="Submit"> 
-        </form> 
-        <?php echo "$message";?> 
-    </body> 
-</html> 
- 
-Q2→ 
-<!DOCTYPE html> 
-<html> 
-<head> 
- <title>Student Profile</title> 
- <style>  body { 
- font-family: Arial, sans-serif; 
- } 
- .container {  display: flex;  width: 80%;  margin: auto;  border: 1px solid black; 
- } 
- 
- .column1 {  width: 25%;  background-color: #f2f2f2;  padding: 20px; 
- } 
- 
- .column2 {  width: 75%;  padding: 20px; 
- } 
-  a {  display: block;  margin: 10px 0;  text-decoration: none;  color: blue;  font-weight: bold; 
- } 
- 
- img {  width: 150px;  height: 150px;  border: 1px solid black; 
- } 
- 
- </style> 
-</head> 	 
-<body> 
-<h2 align="center">Student Profile Page</h2> 
-<div class="container">  <!-- Column 1 --> 
- <div class="column1"> 
- <h3>Menu</h3> 
- 
- <a href="#">Home</a> 
- <a href="#">Contact Us</a> 
- <a href="#">About Us</a> 
- </div 
- 
- <!-- Column 2 --> 
- <div class="column2"> 
- <h3>Student Details</h3> 
- <p><b>Roll Number:</b> 101</p> 
- <p><b>Name:</b> Nikita</p> 
- <p><b>Contact:</b> 9876543210</p> 
- <p><b>Class:</b> TYBSc IT</p> 
- <p><b>Area of Interest:</b> Web Development</p> 
- <p><b>Photo:</b></p> 
- <img src="student.jpg" alt="Student Photo"> 
- </div> 
-</div> 
-</body> 
-</html> 
- 
- 
- 
 Slip no 9 :- q1 
  ## Bus Ticket Reservation Form (HTML & CSS)
 
