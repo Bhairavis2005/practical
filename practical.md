@@ -1263,63 +1263,75 @@ echo "Bags: $bag_qty × 500 = $bag_total <br><br>";
 echo "<h3>Grand Total: $grand_total</h3>";
 ?>
 ```
-  
-q2-> 
-OWASP Top 10 Threats for Web Applications (Introduction) 
-The OWASP (Open Web Application Security Project) is an international organization that works to improve the security of software and web applications. It provides a list called the OWASP 
-Top 10, which shows the most common and dangerous security risks found in web applications. 
-In today’s world, many services like banking, shopping, and social media run on web applications. If these applications are not secure, attackers (hackers) can steal user data, change information, or even take control of the system. So, OWASP Top 10 helps developers understand these risks and build safer applications. 
-  
-OWASP Top 10 Threats (Explained in Simple Words) 
-1. Broken Access Control 
-This happens when users can access things that they are not allowed to see or use. 
-👉 Example: 
- A normal user can open an admin page just by changing the URL. This means access control is broken. 
-  
-2. Cryptographic Failures 
-This happens when sensitive data like passwords or credit card details are not properly protected. 
-👉 Example: 
- If a website stores passwords in plain text instead of encryption, anyone can read them if data is leaked. 
-  
-3. Injection Attacks 
-In this attack, hackers enter harmful code into input fields like login forms. 
-👉 Example: 
- In SQL Injection, a hacker enters special code in username/password field and gets access without correct login. 
-  
-4. Insecure Design 
-This problem comes when the application is not designed with proper security rules. 
-👉 Example: 
- A website does not limit login attempts, so attackers can try many passwords until they guess the correct one. 
-  
-5. Security Misconfiguration 
-This happens when security settings are not set correctly. 
-👉 Example: 
- Server shows error messages with full details, which helps attackers understand system structure. 
-  
-6. Vulnerable and Outdated Components 
-Using old software, libraries, or plugins that have known security issues. 
-👉 Example: 
- A website uses an old version of software that hackers already know how to attack. 
-  
-7. Identification and Authentication Failures 
-Weak login system or poor password handling. 
-👉 Example: 
- Allowing very simple passwords like “12345” or not using proper session control. 
-  
-8. Software and Data Integrity Failures 
-When the system does not verify if the software or data is safe and unchanged. 
-👉 Example: 
- Installing updates from unknown sources can allow attackers to insert malware. 
-  
-9. Security Logging and Monitoring Failures 
-System does not properly track or record suspicious activities. 
-👉 Example: 
- If many wrong login attempts happen but no alert is generated, the attack may continue unnoticed. 
-  
-10. Server-Side Request Forgery (SSRF) 
-In this attack, the hacker tricks the server into making requests to internal or private systems. 
-👉 Example: 
- The server is forced to access internal data which should not be available to outside users. 
+  Q2: OWASP Top 10 Threats for Web Applications
+Introduction
+
+The OWASP (Open Web Application Security Project) is an international organization that works to improve the security of software and web applications. It provides a list called the OWASP Top 10, which shows the most common and dangerous security risks found in web applications.
+
+In today’s world, many services like banking, shopping, and social media run on web applications. If these applications are not secure, attackers (hackers) can steal user data, change information, or even take control of the system.
+
+So, OWASP Top 10 helps developers understand these risks and build safer applications.
+
+OWASP Top 10 Threats (Explained in Simple Words)
+1. Broken Access Control
+
+This happens when users can access things that they are not allowed to see or use.
+
+👉 Example: A normal user can open an admin page just by changing the URL. This means access control is broken.
+
+2. Cryptographic Failures
+
+This happens when sensitive data like passwords or credit card details are not properly protected.
+
+👉 Example: If a website stores passwords in plain text instead of encryption, anyone can read them if data is leaked.
+
+3. Injection Attacks
+
+In this attack, hackers enter harmful code into input fields like login forms.
+
+👉 Example: In SQL Injection, a hacker enters special code in username/password field and gets access without correct login.
+
+4. Insecure Design
+
+This problem comes when the application is not designed with proper security rules.
+
+👉 Example: A website does not limit login attempts, so attackers can try many passwords until they guess the correct one.
+
+5. Security Misconfiguration
+
+This happens when security settings are not set correctly.
+
+👉 Example: Server shows error messages with full details, which helps attackers understand system structure.
+
+6. Vulnerable and Outdated Components
+
+Using old software, libraries, or plugins that have known security issues.
+
+👉 Example: A website uses an old version of software that hackers already know how to attack.
+
+7. Identification and Authentication Failures
+
+Weak login system or poor password handling.
+
+👉 Example: Allowing very simple passwords like “12345” or not using proper session control.
+
+8. Software and Data Integrity Failures
+
+When the system does not verify if the software or data is safe and unchanged.
+
+👉 Example: Installing updates from unknown sources can allow attackers to insert malware.
+
+9. Security Logging and Monitoring Failures
+
+System does not properly track or record suspicious activities.
+
+👉 Example: If many wrong login attempts happen but no alert is generated, the attack may continue unnoticed.
+
+10. Server-Side Request Forgery (SSRF)
+
+In this attack, the hacker tricks the server into making requests to internal or private systems.
+
+👉 Example: The server is forced to access internal data which should not be available to outside users.
   
  Slip no 15 q1 
  
