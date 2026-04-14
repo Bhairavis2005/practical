@@ -728,155 +728,199 @@ $xml->save("Employees.xml");
 echo "Employees.xml file created successfully!";
 ?>
 ```
-
-
-
-
- 
-
- 
-
- 
-
-?> 
 Slip 11 →q1 Login.php —> save file 
-<?php 
-session_start(); // Set default attempts if(!isset($_SESSION['attempt'])){ 
- $_SESSION['attempt'] = 0; 
-} 
-$message = ""; if(isset($_POST['login'])){ 
- $username = $_POST['username']; 
- $password = $_POST['password']; 
- // Set Correct Credentials 
- $correct_user = "admin";  $correct_pass = "1234";  if($username == $correct_user && $password == $correct_pass){ 
- $_SESSION['login'] = true;  header("Location: welcome.php"); 
- exit();  }else{ 
- $_SESSION['attempt']++;  if($_SESSION['attempt'] >= 3){ 
- $message = "Maximum login attempts reached!"; 
- }else{ 
- $message = "Invalid Username or Password"; 
- } 
- } 
-} 
-?> 
-<html> 
-<head> 
-<title>Login</title> 
-</head> 
- 
-<body> 
-<h2>Login Form</h2> 
-<?php echo $message; ?> 
-<?php if($_SESSION['attempt'] < 3){ ?> 
-<form method="post"> 
-Username: <input type="text" name="username" required><br><br> 
-Password: <input type="password" name="password" required><br><br> 
-<input type="submit" name="login" value="Login"> 
-</form> 
-<?php } ?> 
-</body> 
-</html> 
- Welcome.php →save file 
-<?php 
-session_start(); if(!isset($_SESSION['login'])){  header("Location: login.php");  exit(); } 
-?> 
-<html> 
-<head> 
-<title>Welcome</title> 
-</head> 
-<body> 
-<h2>Welcome! Login Successful</h2> 
-</body> 
-</html> 
- 
+## PHP Login System with Session (3 Attempt Limit)
+
+### Step 1: Login Page (login.php)
+
+```php
+<?php
+session_start();
+
+// Set default attempts
+if(!isset($_SESSION['attempt'])){
+    $_SESSION['attempt'] = 0;
+}
+
+$message = "";
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Set Correct Credentials
+    $correct_user = "admin";
+    $correct_pass = "1234";
+
+    if($username == $correct_user && $password == $correct_pass){
+        $_SESSION['login'] = true;
+        header("Location: welcome.php");
+        exit();
+    }else{
+        $_SESSION['attempt']++;
+
+        if($_SESSION['attempt'] >= 3){
+            $message = "Maximum login attempts reached!";
+        }else{
+            $message = "Invalid Username or Password";
+        }
+    }
+}
+?>
+
+<html>
+<head>
+<title>Login</title>
+</head>
+
+<body>
+
+<h2>Login Form</h2>
+
+<?php echo $message; ?>
+
+<?php if($_SESSION['attempt'] < 3){ ?>
+<form method="post">
+Username: <input type="text" name="username" required><br><br>
+Password: <input type="password" name="password" required><br><br>
+<input type="submit" name="login" value="Login">
+</form>
+<?php } ?>
+
+</body>
+</html>
+```
+
+---
+
+### Step 2: Welcome Page (welcome.php)
+
+```php
+<?php
+session_start();
+
+if(!isset($_SESSION['login'])){
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<html>
+<head>
+<title>Welcome</title>
+</head>
+
+<body>
+<h2>Welcome! Login Successful</h2>
+</body>
+</html>
+```
 Q2→ 
 Emp1.php 
- 
-<?php 
-session_start(); if(isset($_POST['next'])){ 
- $_SESSION['eno'] = $_POST['eno']; 
- $_SESSION['ename'] = $_POST['ename'];  $_SESSION['address'] = $_POST['address'];  header("Location: emp2.php"); 
-} 
-?> 
-<html> 
-<body> 
-<h2>Employee Details</h2> 
-<form method="post"> 
-Employee No: <input type="text" name="eno" required><br><br> 
-Employee Name: <input type="text" name="ename" required><br><br> 
-Address: <textarea name="address" required></textarea><br><br> <input type="submit" name="next" value="Next">
-</form> 
-</body> 
-</html> 
- 
- 
-<?php 
-session_start(); if(isset($_POST['next'])){ 
- $_SESSION['basic'] = $_POST['basic']; 
- $_SESSION['da'] = $_POST['da'];  $_SESSION['hra'] = $_POST['hra'];  header("Location: emp3.php"); 
-} 
-?> 
-<html> 
-<body> 
-<h2>Employee Earnings</h2> 
-<form method="post"> 
-Basic: <input type="number" name="basic" required><br><br> 
-DA: <input type="number" name="da" required><br><br> 
-HRA: <input type="number" name="hra" required><br><br> 
-<input type="submit" name="next" value="Next"> 
-</form> 
-</body> 
-</html> emp2.php 
- 
-<?php 
-session_start(); if(isset($_POST['next'])){ 
- $_SESSION['basic'] = $_POST['basic']; 
- $_SESSION['da'] = $_POST['da'];  $_SESSION['hra'] = $_POST['hra'];  header("Location: emp3.php"); 
-} 
-?> 
-<html> 
-<body> 
-<h2>Employee Earnings</h2> 
-<form method="post"> 
-Basic: <input type="number" name="basic" required><br><br> 
-DA: <input type="number" name="da" required><br><br> 
-HRA: <input type="number" name="hra" required><br><br> <input type="submit" name="next" value="Next">
-</form> 
-</body> 
-</html> 
- 
-Emp3.php 
- 
-<?php 
-session_start(); 
-$eno = $_SESSION['eno']; 
-$ename = $_SESSION['ename']; 
-$address = $_SESSION['address']; 
-$basic = $_SESSION['basic']; 
-$da = $_SESSION['da']; 
-$hra = $_SESSION['hra']; 
-$total = $basic + $da + $hra; 
-?> 
-<html> 
-<body> 
-<h2>Employee Information</h2> 
-Employee No: <?php echo $eno; ?><br><br> 
-Employee Name: <?php echo $ename; ?><br><br> 
- 
-Address: <?php echo $address; ?><br><br> 
-Basic: <?php echo $basic; ?><br><br> 
-DA: <?php echo $da; ?><br><br> 
-HRA: <?php echo $hra; ?><br><br> 
-<b>Total Salary: <?php echo $total; ?></b> 
-</body> 
-</html> 
- 
- 
- 
- 
- 
- 
- Slip 12 →q1 
+## PHP Employee Management using Session (3 Pages)
+
+---
+
+### Step 1: Employee Details (emp1.php)
+
+```php
+<?php
+session_start();
+
+if(isset($_POST['next'])){
+    $_SESSION['eno'] = $_POST['eno'];
+    $_SESSION['ename'] = $_POST['ename'];
+    $_SESSION['address'] = $_POST['address'];
+    header("Location: emp2.php");
+}
+?>
+
+<html>
+<body>
+
+<h2>Employee Details</h2>
+
+<form method="post">
+Employee No: <input type="text" name="eno" required><br><br>
+Employee Name: <input type="text" name="ename" required><br><br>
+Address: <textarea name="address" required></textarea><br><br>
+
+<input type="submit" name="next" value="Next">
+</form>
+
+</body>
+</html>
+```
+
+---
+
+### Step 2: Employee Earnings (emp2.php)
+
+```php
+<?php
+session_start();
+
+if(isset($_POST['next'])){
+    $_SESSION['basic'] = $_POST['basic'];
+    $_SESSION['da'] = $_POST['da'];
+    $_SESSION['hra'] = $_POST['hra'];
+    header("Location: emp3.php");
+}
+?>
+
+<html>
+<body>
+
+<h2>Employee Earnings</h2>
+
+<form method="post">
+Basic: <input type="number" name="basic" required><br><br>
+DA: <input type="number" name="da" required><br><br>
+HRA: <input type="number" name="hra" required><br><br>
+
+<input type="submit" name="next" value="Next">
+</form>
+
+</body>
+</html>
+```
+
+---
+
+### Step 3: Display Employee Data (emp3.php)
+
+```php
+<?php
+session_start();
+
+$eno = $_SESSION['eno'];
+$ename = $_SESSION['ename'];
+$address = $_SESSION['address'];
+$basic = $_SESSION['basic'];
+$da = $_SESSION['da'];
+$hra = $_SESSION['hra'];
+
+$total = $basic + $da + $hra;
+?>
+
+<html>
+<body>
+
+<h2>Employee Information</h2>
+
+Employee No: <?php echo $eno; ?><br><br>
+Employee Name: <?php echo $ename; ?><br><br>
+Address: <?php echo $address; ?><br><br>
+Basic: <?php echo $basic; ?><br><br>
+DA: <?php echo $da; ?><br><br>
+HRA: <?php echo $hra; ?><br><br>
+
+<b>Total Salary: <?php echo $total; ?></b>
+
+</body>
+</html>
+```
+  Slip 12 →q1 
  
 Run as localhost/s12q1.html 
  ## PHP Program to Calculate Area and Volume of Cylinder
