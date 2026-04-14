@@ -230,6 +230,83 @@ if (isset($_POST['submit'])) {
 mysqli_close($conn);
 ?>
 ```
+q2-->
+## Student Profile Webpage (HTML & CSS)
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Student Profile</title>
+ <style>
+ body {
+ font-family: Arial, sans-serif;
+ }
+ .container {
+ display: flex;
+ width: 80%;
+ margin: auto;
+ border: 1px solid black;
+ }
+
+ .column1 {
+ width: 25%;
+ background-color: #f2f2f2;
+ padding: 20px;
+ }
+
+ .column2 {
+ width: 75%;
+ padding: 20px;
+ }
+
+ a {
+ display: block;
+ margin: 10px 0;
+ text-decoration: none;
+ color: blue;
+ font-weight: bold;
+ }
+
+ img {
+ width: 150px;
+ height: 150px;
+ border: 1px solid black;
+ }
+ </style>
+</head>	
+<body>
+
+<h2 align="center">Student Profile Page</h2>
+
+<div class="container">
+
+ <!-- Column 1 -->
+ <div class="column1">
+ <h3>Menu</h3>
+
+ <a href="#">Home</a>
+ <a href="#">Contact Us</a>
+ <a href="#">About Us</a>
+ </div>
+
+ <!-- Column 2 -->
+ <div class="column2">
+ <h3>Student Details</h3>
+ <p><b>Roll Number:</b> 101</p>
+ <p><b>Name:</b> Nikita</p>
+ <p><b>Contact:</b> 9876543210</p>
+ <p><b>Class:</b> TYBSc IT</p>
+ <p><b>Area of Interest:</b> Web Development</p>
+ <p><b>Photo:</b></p>
+ <img src="student.jpg" alt="Student Photo">
+ </div>
+
+</div>
+
+</body>
+</html>
+```
 Slip8 --> q1  
 ## HTML Program for Seven Colored Lines
 
